@@ -3,5 +3,4 @@
 
 int Rte_sendNotif(char data)
 {
-    return Comm_send(data);
 }

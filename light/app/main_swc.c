@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "Rte.h"
 
 void light_update_status()
 {
-    char door_status= Rte_receiveNotif();
+    char door_status;
     printf("%c\n", door_status);
 }
 
 int main()
 {
-    Rte_commInit();
     
     while (1)
     {

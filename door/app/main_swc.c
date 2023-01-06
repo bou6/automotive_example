@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Rte.h"
 #include "Dem.h"
+#include <unistd.h>
 
 char door_menu()
 {
@@ -28,13 +29,10 @@ void door_handle_input(char input)
     {
         case '1':
         case '2':
-            Rte_sendNotif(input);
             break;
         case '3':
-            Dem_SetEventStatus(TEST_EVENT_ID_1, DEM_EVENT_STATUS_PREFAILED);
             break;
         case '4':
-            Dem_SetEventStatus(TEST_EVENT_ID_1, DEM_EVENT_STATUS_PREPASSED);
             break;
         default:
             break;
