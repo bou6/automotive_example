@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "Rte.h"
 
 void light_update_status()
 {
     char door_status= Rte_receiveNotif();
-    printf("%c\n", door_status);
     switch (door_status)
     {
         case '1':
             printf("ligh status : off \n");
+            break;
         case '2':
             printf("ligh status : on \n");
+            break;
         default:
             break;
     }
