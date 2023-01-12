@@ -1,4 +1,5 @@
 #include "Dem.h"
+#include "Nvm.h"
 
 Dem_EventStruct g_eventArray_ast[] =
 {
@@ -16,6 +17,7 @@ int Dem_SetEventStatus(const Dem_EventIdType id, const Dem_EventStatusType statu
     int index;
     int array_size = sizeof(g_eventArray_ast)/ sizeof(Dem_EventStruct);
     Dem_EventStruct* currentEvent_ptr;
+    int ret=0;
 
     for (index=0; index < array_size; index++)
     {
@@ -52,17 +54,24 @@ int Dem_SetEventStatus(const Dem_EventIdType id, const Dem_EventStatusType statu
 
         case DEM_EVENT_STATUS_PASSED:
             currentEvent_ptr->status_en = DEM_EVENT_STATUS_PASSED;
+            // set the counter to threshold
+            currentEvent_ptr->curr_counter= DEM_EVENT_THRESHOLD;
             break;
 
         case DEM_EVENT_STATUS_FAILED:
             currentEvent_ptr->status_en = DEM_EVENT_STATUS_FAILED;
+            // set the counter to threshold
+            currentEvent_ptr->curr_counter= DEM_EVENT_THRESHOLD;
             break;
 
         default:
             break;
     }
 
-    return 0;
+    // write the counter value in the Nvm
+    ret = Nvm_WriteBlock((int)(id), currentEvent_ptr->curr_counter);
+
+    return ret;
 
 }
 

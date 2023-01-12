@@ -1,7 +1,8 @@
 set(_target "bsw")
 
 set(_source_files   "Comm.c"
-                    "Dem.c")
+                    "Dem.c"
+                    "Nvm.c")
 
 set(_include_dir      
    )

@@ -25,7 +25,7 @@ extern "C"
  **********************************************************************************************************************
 */
 int Nvm_WriteBlock(int blockId, int value);
-int Nvm_ReadBlock(int blockId);
+int Nvm_ReadBlock(int blockId, int* value_ptr);
 
 #ifdef __cplusplus
 }
