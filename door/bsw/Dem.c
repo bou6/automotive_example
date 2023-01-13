@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "Dem.h"
 #include "Nvm.h"
 
@@ -86,4 +87,34 @@ void Dem_GetEventStatus()
         printf("Id=%d, status=%d, counter = %d", g_eventArray_ast[index].id, g_eventArray_ast[index].status_en, g_eventArray_ast[index].curr_counter);
     }
 
+}
+
+void Dem_MainFunction()
+{
+    char in;
+    printf("***********************************\n"); 
+    printf("**** Diagnostic creation/Removal **\n"); 
+    printf("***********************************\n"); 
+    printf("Diagnostic MENU\n"); 
+    printf("***********************************\n"); 
+    printf("1-Create Defect (DTC = 0x01)\n"); 
+    printf("2-Remove Defect (DTC = 0x02)\n"); 
+    printf("***********************************\n"); 
+    Dem_GetEventStatus();
+    printf("\n***********************************\n\n"); 
+    scanf(" %c",&in);
+
+    switch (in)
+    {
+    case '1':
+        Dem_SetEventStatus(TEST_EVENT_ID_1, DEM_EVENT_STATUS_PREFAILED);
+        break;
+
+    case '2':
+        Dem_SetEventStatus(TEST_EVENT_ID_1, DEM_EVENT_STATUS_PREFAILED);
+        break;
+    
+    default:
+        break;
+    }
 }

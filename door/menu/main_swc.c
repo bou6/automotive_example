@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Rte.h"
 #include "Dem.h"
+#include "Dcm.h"
 
 char door_menu()
 {
@@ -13,11 +14,8 @@ char door_menu()
     printf("***********************************\n"); 
     printf("1-Close door\n"); 
     printf("2-Open Door \n"); 
-    printf("3-Create defect \n"); 
-    printf("4-Remove defect \n"); 
-    printf("5-Diagnostic \n"); 
-    printf("***********************************\n"); 
-    Dem_GetEventStatus();
+    printf("3-Defects creation/removal \n"); 
+    printf("4-Diagnostic \n"); 
     printf("\n***********************************\n\n"); 
     scanf(" %c",&in);
     return in;
@@ -32,12 +30,9 @@ void door_handle_input(char input)
             Rte_sendNotif(input);
             break;
         case '3':
-            Dem_SetEventStatus(TEST_EVENT_ID_1, DEM_EVENT_STATUS_PREFAILED);
+            Dem_MainFunction();
             break;
         case '4':
-            Dem_SetEventStatus(TEST_EVENT_ID_1, DEM_EVENT_STATUS_PREPASSED);
-            break;
-        case '5':
             Dcm_MainFunction();
             break;
         default:

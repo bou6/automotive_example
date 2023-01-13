@@ -52,6 +52,7 @@ typedef struct
 */
 int Dem_SetEventStatus(Dem_EventIdType, Dem_EventStatusType);
 void Dem_GetEventStatus();
+void Dem_MainFunction();
 
 #ifdef __cplusplus
 }

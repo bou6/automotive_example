@@ -1,9 +1,10 @@
+#include <stdio.h>
 #include "Dcm.h"
 #include "diag_swc.h"
 
 /*
  **********************************************************************************************************************
- * Functions declaration
+ * Functions definition
  **********************************************************************************************************************
 */
 void Dcm_MainFunction()
@@ -16,7 +17,6 @@ void Dcm_MainFunction()
     printf("***********************************\n"); 
     printf("1-Read DTCs (0x19)\n"); 
     printf("2-Change Diagnostic session (0x10)\n"); 
-    printf("***********************************\n"); 
     printf("\n***********************************\n\n"); 
     scanf(" %c",&in);
 
