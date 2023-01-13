@@ -95,6 +95,7 @@ void Dem_MainFunction()
         break;
 
     case '2':
+        //Fix Bug
         Dem_SetEventStatus(TEST_EVENT_ID_1, DEM_EVENT_STATUS_PREFAILED);
         break;
     
