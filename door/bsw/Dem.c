@@ -38,31 +38,19 @@ int Dem_SetEventStatus(const Dem_EventIdType id, const Dem_EventStatusType statu
     switch (status)
     {
         case DEM_EVENT_STATUS_PREPASSED:
-            if (currentEvent_ptr->curr_counter > 0)
-                currentEvent_ptr->curr_counter--;
-            //check whether the threshold are reached
-            if (currentEvent_ptr->curr_counter == 0)
-                currentEvent_ptr->status_en = DEM_EVENT_STATUS_PASSED;    
+            //< add here
             break;
         
         case DEM_EVENT_STATUS_PREFAILED:
-            if (currentEvent_ptr->curr_counter < DEM_EVENT_THRESHOLD)
-                currentEvent_ptr->curr_counter++;
-            //check whether the threshold are reached
-            if (currentEvent_ptr->curr_counter == DEM_EVENT_THRESHOLD)
-                currentEvent_ptr->status_en = DEM_EVENT_STATUS_FAILED;    
+            //< add here
             break;
 
         case DEM_EVENT_STATUS_PASSED:
-            currentEvent_ptr->status_en = DEM_EVENT_STATUS_PASSED;
-            // set the counter to threshold
-            currentEvent_ptr->curr_counter= DEM_EVENT_THRESHOLD;
+            //< add here
             break;
 
         case DEM_EVENT_STATUS_FAILED:
-            currentEvent_ptr->status_en = DEM_EVENT_STATUS_FAILED;
-            // set the counter to threshold
-            currentEvent_ptr->curr_counter= DEM_EVENT_THRESHOLD;
+            //< add here
             break;
 
         default:
