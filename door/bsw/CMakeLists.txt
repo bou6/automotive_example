@@ -2,6 +2,7 @@ set(_target "bsw")
 
 set(_source_files   "Comm.c"
                     "Dem.c"
+                    "Dcm.c"
                     "Nvm.c")
 
 set(_include_dir      
@@ -10,7 +11,7 @@ set(_include_dir
 # Public headers 
 set (_public_headers ".")
 
-set (_depend_libs)
+set (_depend_libs "app")
 
 add_library(${_target}
   ${_source_files}
