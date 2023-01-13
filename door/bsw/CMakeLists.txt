@@ -2,8 +2,7 @@ set(_target "bsw")
 
 set(_source_files   "Comm.c"
                     "Dem.c"
-                    "Dcm.c"
-                    "Nvm.c")
+                    "Dcm.c")
 
 set(_include_dir      
    )

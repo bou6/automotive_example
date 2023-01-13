@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "Dem.h"
-#include "Nvm.h"
 
 Dem_EventStruct g_eventArray_ast[] =
 {
@@ -56,9 +55,6 @@ int Dem_SetEventStatus(const Dem_EventIdType id, const Dem_EventStatusType statu
         default:
             break;
     }
-
-    // write the counter value in the Nvm
-    ret = Nvm_WriteBlock((int)(id), currentEvent_ptr->curr_counter);
 
     return ret;
 
